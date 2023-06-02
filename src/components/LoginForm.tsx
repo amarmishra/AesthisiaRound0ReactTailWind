@@ -13,6 +13,10 @@ export const LoginForm = () => {
     const [requiredPass,setRequiredPass]=useState<boolean>(false)
     const [validEmail,setValidEmail]=useState<boolean | null>(null)
 
+    //show pass state
+    const [showPass,setShowPass]=useState<boolean | null >(false)
+
+
 
 
     //cause animation on placeholder 
@@ -114,8 +118,8 @@ export const LoginForm = () => {
         <div className='w-full flex flex-col h-fit justify-center items-center'>
             
             <div className='relative w-full'>
-                <input  ref={passwordInput} className={` w-full outline-none  rounded-md p-2  outline-[color:var(--outline-color)] focus:shadow-lg  ${requiredPass? 'outline-pink-500' : ''}`} name='password' value={formData.password} onChange={handleChange} type='password' ></input>
-                <VscEye className='absolute right-2 top-1/3 '></VscEye>
+                <input  ref={passwordInput} className={` w-full outline-none  rounded-md p-2  outline-[color:var(--outline-color)] focus:shadow-lg  ${requiredPass? 'outline-pink-500' : ''}`} name='password' value={formData.password} onChange={handleChange} type={showPass? 'text' : 'password' } ></input>
+                <VscEye className='absolute right-2 top-1/3 ' onClick={()=>setShowPass(!showPass)}></VscEye>
             </div>
             {requiredPass? <span className='mt-1 text-pink-500 self-start'>Password required!</span>: null}
             
