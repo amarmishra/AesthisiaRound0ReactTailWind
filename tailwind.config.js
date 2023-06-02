@@ -13,6 +13,9 @@ module.exports = {
         inter: "'Inter var',serif",
         poppins:"'Poppins',serif"
       },
+      boxShadow: {
+        customShadow : '-2px 12px 19px -3px rgb(0 0 0 / 67%)'
+      }
     },
   },
   plugins: [],

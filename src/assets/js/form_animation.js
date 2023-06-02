@@ -1,9 +1,9 @@
 export class PlaceHolderAnimation{
    
    
-    constructor(input,placeholder,delay=20){
+    constructor(input,placeholder,delay=30){
         this.input=input                        //refence to useRef Dom
-        this.placeholder=placeholder
+        this.placeholder=placeholder+"  "
         this.delay=delay
         this.animationId=null
         // this.start=this.start.bind(this)
